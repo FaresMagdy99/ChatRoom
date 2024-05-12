@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Material Messaging App Concept</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <nav class="menu">
+          <ul class="items">
+            <li class="item">
+              <button onclick="window.location.href='index2.html'" class="fa fa-home" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-user" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-picture-o" aria-hidden="true"></button>
+            </li>
+            <li class="item item-active">
+              <button class="fa fa-commenting" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-file" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-cog" aria-hidden="true"></button>
+            </li>
+          </ul>
+        </nav>
+
+
+
+
+        <section class="chat">
+          <div class="header-chat">
+            <i class="icon fa fa-user-o" aria-hidden="true"></i>
+            <p class="name" id="room-name">sebaie,Abdo</p>
+            <p class="name" id="users">sebaie,Abdo</p>
+            <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+          </div>
+          <div class="chat-messages">
+            <div class="message">
+              <div class="photo"
+                style="background-image: url(https://www.ihwanburhan.com/wp-content/uploads/2020/01/2021-BMW-M4-Exterior.png);">
+                <div class="online"></div>
+              </div>
+              <p class="text"> Hi, how are you ? </p>
+            </div>
+            <div class="message text-only">
+              <p class="text"> What are you doing tonight ? Want to go take a drink ?</p>
+            </div>
+            <p class="time"> 14h58</p>
+            <div class="message text-only">
+              <div class="response">
+                <p class="text"> Hey abdo ! It's been a while 😃</p>
+              </div>
+            </div>
+            <div class="message text-only">
+              <div class="response">
+                <p class="text"> When can we meet ?</p>
+              </div>
+            </div>
+            <p class="response-time time"> 15h04</p>
+            <div class="message">
+              <div class="photo"
+                style="background-image: url(https://www.ihwanburhan.com/wp-content/uploads/2020/01/2021-BMW-M4-Exterior.png);">
+                <div class="online"></div>
+              </div>
+              <p class="text"> 9 pm at the bar if possible </p>
+            </div>
+            <p class="time"> 15h09</p>
+          </div>
+          <form class="footer-chat" id="chat-form">
+            <button class="icon fa fa-smile-o clickable" style="font-size:25px;" aria-hidden="true"></button>
+            <input id="msg" type="text" class="write-message" placeholder="Type your message here"></input>
+            <button class="icon send fa fa-paper-plane-o clickable " type="submit"
+              style="font-size:15px;margin-right: 150px;" aria-hidden="true"></button>
+            <!-- <button class="fa fa-microphone fa-2x" style="font-size:20px ;margin-left:150px;"
+              aria-hidden="true"></button> -->
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
+  <!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.js"
+    integrity="sha512-hphiPq58BTuvD2c4D4qj54FIfIwudQPiV3/EAJ/3lZNhP+9FPVfhymxZ/r/0fAWSOJLHSX+wkBvdeS5ODlGNoQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>

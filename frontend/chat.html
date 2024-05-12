@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+  <!---------------------------------->
+  <title>Chat App</title>
+  <script src="/siofu/client.js"></script>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+      var socket = io.connect();
+      var siofu = new SocketIOFileUpload(socket);
+
+      // Configure the three ways that SocketIOFileUpload can read files:
+      // document.getElementById("upload_btn").addEventListener("click", siofu.prompt, false);
+      siofu.listenOnInput(document.getElementById("upload_input"));
+      siofu.listenOnDrop(document.getElementById("file_drop"));
+
+
+      siofu.addEventListener("progress", function (event) {
+        var percent = event.bytesLoaded / event.file.size * 100;
+        console.log("File is", percent.toFixed(2), "percent loaded");
+      });
+
+      // Do something when a file is uploaded:
+      siofu.addEventListener("complete", function (event) {
+        console.log(event.success);
+        console.log(event.file);
+
+        console.log(event.detail.name);
+
+      });
+
+    }, false);
+  </script>
+</head>
+
+<body>
+  <div class="chat-container">
+    <header style="text-align: center;" class="chat-header">
+      <h1> Welcome to Chat Room <i class="fas fa-comments"></i> </h1>
+      <a href="index.html" class="btn">Leave Room</a>
+    </header>
+    <main class="chat-main">
+      <div style="width: 300px ;" class="chat-sidebar">
+        <h3><i class="fas fa-comments"></i> Room Name:</h3>
+        <h2 id="room-name"></h2>
+        <h3><i class="fas fa-users"></i> Users</h3>
+        <ul id="users">
+        </ul>
+         <br>
+         <hr>
+        <br><br>
+        <div>
+          <p><label>Choose File: <input type="file" id="upload_input" /></label></p>
+          <br>
+          <p style="color: white;"> OR : Drag and drop your file here</p>
+          <br>
+          <div id="file_drop" dropzone="copy" title="drop files for upload"></div>
+
+        </div>
+      </div>
+      <div class="chat-messages">
+      </div>
+    </main>
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+        <button class="btn"><i class="fas fa-paper-plane"></i>Send</button>
+        <button class="btn" id="recordButton">Record</button>
+        <button class="btn" id="pauseButton" disabled>Pause</button>
+        <button class="btn" id="stopButton" disabled>Stop</button>
+
+        <!---------------------------------->
+      </form>
+      <ul id="recordingsList"></ul>
+    </div>
+  </div>
+  
+  
+  <button onclick="voiceSent();" id="voice_sent" style="display: none;">voiceSent</button>
+  <!---------------------------------->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.js"
+    integrity="sha512-hphiPq58BTuvD2c4D4qj54FIfIwudQPiV3/EAJ/3lZNhP+9FPVfhymxZ/r/0fAWSOJLHSX+wkBvdeS5ODlGNoQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/voicerec.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Material Messaging App Concept</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <nav class="menu">
+          <ul class="items">
+            <li class="item item-active">
+              <button href="index.html" class="fa fa-home" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-user" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-picture-o" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button onclick="window.location.href='index.html'" class="fa fa-commenting" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-file" aria-hidden="true"></button>
+            </li>
+            <li class="item">
+              <button class="fa fa-cog" aria-hidden="true"></button>
+            </li>
+          </ul>
+        </nav>
+
+
+
+        <div style="margin-left: auto;
+      margin-right: auto;
+      margin-top:auto;
+      margin-bottom:auto; size: 100px;">
+          <div class="join-container" style="text-align: center;">
+            <header class="join-header">
+              <h1><i class="fas fa-smile" style="font-size:100px;"></i> ChatCord</h1>
+            </header>
+            <main class="join-main">
+              <form action="chat.html">
+                <div class="form-control">
+                  <label style="font-size:50px;" for="username">Username</label>
+                  <input style="font-size:20px;padding: 10px;margin-left:10px;" type="text" name="username"
+                    id="username" placeholder="Enter username..." required />
+                </div>
+                <div class="form-control">
+                  <label style="font-size:50px;" for="room">Room</label>
+                  <select style="font-size:20px;padding: 5px;margin-left:10px;" name="room" id="room">
+                    <option value="1">1</option>
+                    <option value="2">1</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+                <button style="font-size:30px;" type="submit" class="btn">Join Chat</button>
+              </form>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- partial -->
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
